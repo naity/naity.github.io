@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Yuan Tian</title>
+    <link>http://example.org/publications/</link>
+    <description>Recent content in Publications on Yuan Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>
+    <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster>
+    <copyright>Yuan Tian</copyright>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0800</lastBuildDate><atom:link href="http://example.org/publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Th2-Biased Transcriptional Profile Predicts HIV Envelope-Specific Polyfunctional CD4&#43; T Cells That Correlated with Reduced Risk of Infection in RV144 Trial</title>
+      <link>http://example.org/publications/hiv/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/hiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Population of CD4&#43;CD8&#43; Double-Positive T Cells Associated with Risk of Plasma Leakage in Dengue Viral Infection</title>
+      <link>http://example.org/publications/leakage/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/leakage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robust Normalization and Integration of Single-cell Protein Expression across CITE-seq Datasets</title>
+      <link>http://example.org/publications/normalization/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/normalization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Single-cell immunology of SARS-CoV-2 infection</title>
+      <link>http://example.org/publications/covid-review/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/covid-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A system-view of Bordetella pertussis booster vaccine responses in adults primed with whole-cell versus acellular vaccine in infancy</title>
+      <link>http://example.org/publications/pertussis/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/pertussis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Superscan: Supervised Single-Cell Annotation</title>
+      <link>http://example.org/publications/superscan/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/superscan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Molecular Signatures of Dengue Virus-Specific IL-10/IFN-γ Co-producing CD4 T Cells and Their Association with Dengue Disease</title>
+      <link>http://example.org/publications/dengue_cd4/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/dengue_cd4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transcriptomic immune profiles of human flavivirus‐specific T‐cell responses</title>
+      <link>http://example.org/publications/flavivirus-review/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/flavivirus-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Human T cell response to dengue virus infection</title>
+      <link>http://example.org/publications/dengue-review/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/dengue-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Modified Injector and Sample Acquisition Protocol Can Improve Data Quality and Reduce Inter‐Instrument Variability of the Helios Mass Cytometer</title>
+      <link>http://example.org/publications/cytof/</link>
+      <pubDate>Tue, 30 Jul 2019 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/cytof/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dengue-specific CD8&#43; T cell subsets display specialized transcriptomic and TCR profiles</title>
+      <link>http://example.org/publications/dengue_cd8/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/dengue_cd8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cutting edge: transcriptional profiling reveals multifunctional and cytotoxic antiviral responses of Zika virus–specific CD8&#43; T cells</title>
+      <link>http://example.org/publications/zika/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/zika/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Review on T Cell Epitopes Identified Using Prediction and Cell-Mediated Immune Models for Mycobacterium tuberculosis and Bordetella pertussis</title>
+      <link>http://example.org/publications/epitope-review/</link>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/epitope-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Immuno-proteomic interrogation of dengue infection reveals novel HLA haplotype-specific MHC-I antigens</title>
+      <link>http://example.org/publications/dengue-antigens/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/dengue-antigens/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unique phenotypes and clonal expansions of human CD4 effector memory T cells re-expressing CD45RA</title>
+      <link>http://example.org/publications/cd4-temra/</link>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/cd4-temra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cytotoxic CD4 T cells: differentiation, function, and application to dengue virus infection</title>
+      <link>http://example.org/publications/cytotoxic-review/</link>
+      <pubDate>Wed, 07 Dec 2016 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/cytotoxic-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IL-10 regulates memory T cell development and the balance between Th1 and follicular Th cell responses during an acute viral infection</title>
+      <link>http://example.org/publications/il-10-paper/</link>
+      <pubDate>Mon, 15 Aug 2016 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/il-10-paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IL-21 and T Cell Differentiation: Consider the Context</title>
+      <link>http://example.org/publications/il21-review/</link>
+      <pubDate>Mon, 01 Aug 2016 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/il21-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A context-dependent role for IL-21 in modulating the differentiation, distribution, and abundance of effector and memory CD8 T cell subsets</title>
+      <link>http://example.org/publications/il-21-paper/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 -0800</pubDate>
+      <author>ytiancompbio@gmail.com (Yuan Tian)</author>
+      <guid>http://example.org/publications/il-21-paper/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

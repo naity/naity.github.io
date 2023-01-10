@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Autoencoder - Tag - Yuan Tian</title>
+        <link>http://example.org/tags/autoencoder/</link>
+        <description>Autoencoder - Tag - Yuan Tian</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>
+            <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster><copyright>Yuan Tian</copyright><lastBuildDate>Sat, 14 Sep 2019 00:00:00 -0800</lastBuildDate><atom:link href="http://example.org/tags/autoencoder/" rel="self" type="application/rss+xml" /><item>
+    <title>Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)</title>
+    <link>http://example.org/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/</link>
+    <pubDate>Sat, 14 Sep 2019 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/</guid>
+    <description><![CDATA[Autoencoder for integrative analysis of CITE-seq data.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again - Yuan Tian</title><meta name="Description" content="Use deep learning to refocus out-of-focus microscopy images."><meta property="og:title" content="ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again" />
+<meta property="og:description" content="Use deep learning to refocus out-of-focus microscopy images." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" /><meta property="og:image" content="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/feature_loss.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-22T00:00:00-08:00" />
+<meta property="article:modified_time" content="2019-04-22T00:00:00-08:00" /><meta property="og:site_name" content="Yuan Tian" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/feature_loss.png"/>
+<meta name="twitter:title" content="ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again"/>
+<meta name="twitter:description" content="Use deep learning to refocus out-of-focus microscopy images."/>
+<meta name="application-name" content="Yuan Tian">
+<meta name="apple-mobile-web-app-title" content="Yuan Tian"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" /><link rel="next" href="http://example.org/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/refocus-making-out-of-focus-microscopy-images-in-focus-again\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/example.org\/refocus-making-out-of-focus-microscopy-images-in-focus-again\/featured-image.jpeg",
+                            "width":  700 ,
+                            "height":  393 
+                        }],"genre": "posts","keywords": "Deep Learning, Machine Learning, Convolutional Neural Network","wordcount":  1017 ,
+        "url": "http:\/\/example.org\/refocus-making-out-of-focus-microscopy-images-in-focus-again\/","datePublished": "2019-04-22T00:00:00-08:00","dateModified": "2019-04-22T00:00:00-08:00","license": "Yuan Tian","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Yuan Tian"
+            },"description": "Use deep learning to refocus out-of-focus microscopy images."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Yuan Tian">Yuan Tian</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/publications/"> Publications </a><a class="menu-item" href="/photos/"> Photography </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Yuan Tian">Yuan Tian</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/publications/" title="">Publications</a><a class="menu-item" href="/photos/" title="">Photography</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.ytiancompbio.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Yuan Tian</a></span>&nbsp;<span class="post-category">included in <a href="/categories/machine-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Machine Learning</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="04/22/2019">04/22/2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1017 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/refocus-making-out-of-focus-microscopy-images-in-focus-again/featured-image.jpeg"
+        data-srcset="/refocus-making-out-of-focus-microscopy-images-in-focus-again/featured-image.jpeg, /refocus-making-out-of-focus-microscopy-images-in-focus-again/featured-image.jpeg 1.5x, /refocus-making-out-of-focus-microscopy-images-in-focus-again/featured-image.jpeg 2x"
+        data-sizes="auto"
+        alt="/refocus-making-out-of-focus-microscopy-images-in-focus-again/featured-image.jpeg"
+        title="Use deep learning to refocus out-of-focus microscopy images." /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#u-net">U-net</a></li>
+    <li><a href="#feature-loss">Feature loss</a></li>
+    <li><a href="#implementation-using-fastai">Implementation using fastai</a></li>
+    <li><a href="#training-and-testing">Training and testing</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#summary-and-future-directions">Summary and future directions</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>        <font size="6">M</font><font size="4">icroscopy images are widely used for the diagnosis of various diseases such as infections and cancers. Furthermore, they facilitate basic biomedical research that has been continuously generating new insights into the causes of human diseases. Therefore, microscopy images are of great importance in improving our health. However, obtaining high-quality in-focus microscopy images poses one of the biggest challenges in the field of microscopy. For example, certain tissues, such as lung and intestines, are uneven and can result in out-of-focus images. In this post, we will tackle this problem by using deep learning to refocus out-of-focus microscopy images. In other words, we will turn out-of-focus microscopy images into in-focus ones (see the figure below) using deep learning.</font></p>
+<p><figure><a class="lightgallery" href="/refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png" title="In-focus and out-of-focus microscopy images" data-thumbnail="/refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png" data-sub-html="<h2>Left: out of focus. Right: in focus</h2><p>In-focus and out-of-focus microscopy images</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png"
+            data-srcset="/refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png, /refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png 1.5x, /refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png 2x"
+            data-sizes="auto"
+            alt="/refocus-making-out-of-focus-microscopy-images-in-focus-again/examples.png" width="700" height="293" />
+    </a><figcaption class="image-caption">Left: out of focus. Right: in focus</figcaption>
+    </figure></p>
+<h2 id="data">Data</h2>
+<p>We will be using the <a href="https://data.broadinstitute.org/bbbc/BBBC006/" target="_blank" rel="noopener noreffer ">Broad Bioimage Benchmark Collection 006 (BBBC006)</a> image set, which was acquired from one 384-well microplate containing human cells whose nuclei were labeled by Hoechst stains. A z-stack of 32 images (z = 16 at the optimal focal plane, 15 images above the focal plane, and 16 below) was taken for each of the 768 fields of view (384 wells, 2 fields of view per well).</p>
+<h2 id="approach">Approach</h2>
+<p>The overall strategy is to build a convolutional neural network that takes out-of-focus images as input and generates in-focus images as output. We will base our neural network on the U-net architecture. In addition, we will use feature loss (originally called <a href="https://arxiv.org/pdf/1603.08155.pdf" target="_blank" rel="noopener noreffer ">perceptual loss by Johnson et al.</a>) as the loss function to quantify the differences between the output of the neural network and its corresponding optimal focal plane image at z = 16, or the target.</p>
+<h2 id="u-net">U-net</h2>
+<p>U-net was originally developed by Ronneberge et al. for biomedical image segmentation problems. U-net essentially consists of three components: a downsampling path that reduces the image size, a subsequent upsampling path that increases the image size, and cross connections that transfer activations from selected parts of the downsampling path to their corresponding parts in the upsampling path. Cross connections supplement the upsampling path with information from the downsampling path and are the major invention that makes U-net perform so well. We will use ResNet-34 pretrained on ImageNet as the downsampling path, which utilizes the technique termed transfer learning.</p>
+<p><figure><a class="lightgallery" href="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png" title="U-net" data-thumbnail="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png" data-sub-html="<h2>U-net-based architecture</h2><p>U-net</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png"
+            data-srcset="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png, /refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png 1.5x, /refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png 2x"
+            data-sizes="auto"
+            alt="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png" width="700" height="364" />
+    </a><figcaption class="image-caption">U-net-based architecture</figcaption>
+    </figure></p>
+<h2 id="feature-loss">Feature loss</h2>
+<p>Feature loss helps reconstruct fine details in images and is well suited to style transfer and super-resolution imaging applications. As shown in the figure below, the basic idea of feature loss is to put the output and target through the same ImageNet model (VGG-16 in our case) and then compare their activations at selected intermediate layers instead of the final layer.</p>
+<p><figure><a class="lightgallery" href="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png" title="Feature Loss" data-thumbnail="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png" data-sub-html="<h2>Feature Loss</h2><p>Feature Loss</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png"
+            data-srcset="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png, /refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png 1.5x, /refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png 2x"
+            data-sizes="auto"
+            alt="/refocus-making-out-of-focus-microscopy-images-in-focus-again/unet.png" width="700" height="364" />
+    </a><figcaption class="image-caption">Feature Loss</figcaption>
+    </figure></p>
+<h2 id="implementation-using-fastai">Implementation using fastai</h2>
+<p>The implementation of our U-net-based neural network is simply one line of code using the fastai library as shown below. We just need to provide the data, downsampling architecture (ResNet-34), loss function (feature loss), and a few additional parameters.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">unet_learner</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet34</span><span class="p">,</span>   
+</span></span><span class="line"><span class="cl">                     <span class="n">loss_func</span><span class="o">=</span><span class="n">feat_loss</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">callback_fns</span><span class="o">=</span><span class="n">LossMetrics</span><span class="p">,</span> <span class="n">wd</span><span class="o">=</span><span class="n">wd</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">blur</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">norm_type</span><span class="o">=</span><span class="n">NormType</span><span class="o">.</span><span class="n">Weight</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We will use the implementation of feature loss by Jeremy Howard as shown below:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">FeatureLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m_feat</span><span class="p">,</span> <span class="n">layer_ids</span><span class="p">,</span> <span class="n">layer_wgts</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">m_feat</span> <span class="o">=</span> <span class="n">m_feat</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">loss_features</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">m_feat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">layer_ids</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span> <span class="o">=</span> <span class="n">hook_outputs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loss_features</span><span class="p">,</span> <span class="n">detach</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">wgts</span> <span class="o">=</span> <span class="n">layer_wgts</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">metric_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pixel&#39;</span><span class="p">,]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;feat_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">layer_ids</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">              <span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;gram_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">layer_ids</span><span class="p">))]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">make_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">m_feat</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[(</span><span class="n">o</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">if</span> <span class="n">clone</span> <span class="k">else</span> <span class="n">o</span><span class="p">)</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">stored</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out_feat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_features</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">clone</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">in_feat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_features</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">feat_losses</span> <span class="o">=</span> <span class="p">[</span><span class="n">base_loss</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">target</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">feat_losses</span> <span class="o">+=</span> <span class="p">[</span><span class="n">base_loss</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span><span class="o">*</span><span class="n">w</span>
+</span></span><span class="line"><span class="cl">                             <span class="k">for</span> <span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">in_feat</span><span class="p">,</span> <span class="n">out_feat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wgts</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">feat_losses</span> <span class="o">+=</span> <span class="p">[</span><span class="n">base_loss</span><span class="p">(</span><span class="n">gram_matrix</span><span class="p">(</span><span class="n">f_in</span><span class="p">),</span> <span class="n">gram_matrix</span><span class="p">(</span><span class="n">f_out</span><span class="p">))</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">5e3</span>
+</span></span><span class="line"><span class="cl">                             <span class="k">for</span> <span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">in_feat</span><span class="p">,</span> <span class="n">out_feat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">wgts</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">metrics</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metric_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feat_losses</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feat_losses</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="training-and-testing">Training and testing</h2>
+<p>We will train our neural network with out-of-focus images that are above the focal plane at z = 1 (the worst), 5 (intermediate), and 10 (close to in-focus)using z = 16 as the ground truth (y). We will set aside a small portion of these images as validation sets and use them to guide and evaluate the training process. After training, we will further assess the model’s performance on out-of-focus images that are below the focal plane at z = 32. Although both are out of focus, images that are above or below the focal plane look different as their distances to the lens are different. Therefore, our strategy will allow us to test the generalizability of the trained model.</p>
+<h2 id="results">Results</h2>
+<p>We first evaluate the performance of our model on the validation sets at various out-of-focus levels. As shown below, the model does a good job in distinguishing the blurred cells and the performance improves if we use less blurred images as we would expect.</p>
+<p><figure><a class="lightgallery" href="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png" title="Validation Result" data-thumbnail="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png" data-sub-html="<h2>Model performance on the validation sets</h2><p>Validation Result</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png"
+            data-srcset="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png, /refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png 1.5x, /refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png 2x"
+            data-sizes="auto"
+            alt="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result.png" width="438" height="472" />
+    </a><figcaption class="image-caption">Model performance on the validation sets</figcaption>
+    </figure></p>
+<p>Next, we examined the model’s performance on the test set at z = 32. As shown below, the image generated by the model closely resembles the optimal focal plane image at z = 16. Thus, our model trained with images that are above the focal plane also performs well on images that are below the focal plane.</p>
+<p><figure><a class="lightgallery" href="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png" title="Test Result" data-thumbnail="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png" data-sub-html="<h2>Model performance on the test set at z = 32</h2><p>Test Result</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png"
+            data-srcset="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png, /refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png 1.5x, /refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png 2x"
+            data-sizes="auto"
+            alt="/refocus-making-out-of-focus-microscopy-images-in-focus-again/result2.png" width="700" height="252" />
+    </a><figcaption class="image-caption">Model performance on the test set at z = 32</figcaption>
+    </figure></p>
+<h2 id="summary-and-future-directions">Summary and future directions</h2>
+<p>In sum, we successfully built a neural network that refocuses blurry out-of-focus microscopy images. This work improves the quality of microscopy images and will facilitate the studies of human diseases. Due to limited computation power, I was only able to work with images of very small size (128*128). Ideally, the neural network should be able to process whole slide images, probably by dividing them into patches. Furthermore, the neural network should be able to handle different kinds of microscopy images with different stains. Finally, we can incorporate the neural network into acquisition platforms to refocus out-of-focus images in real time and eliminate the need for post-acquisition fixation.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>I’d like to thank Drs. Paola Marcovecchio, Sara McArdle and Zbigniew Mikulski from the Imaging Core Facility at La Jolla Institute for Immunology (LJI) for helpful discussions.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 04/22/2019</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/refocus-making-out-of-focus-microscopy-images-in-focus-again/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" data-title="ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again" data-via="_ytian_" data-hashtags="Deep Learning,Machine Learning,Convolutional Neural Network"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" data-hashtag="Deep Learning"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" data-title="ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" data-title="ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/" data-title="ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/deep-learning/">Deep Learning</a>,&nbsp;<a href="/tags/machine-learning/">Machine Learning</a>,&nbsp;<a href="/tags/convolutional-neural-network/">Convolutional Neural Network</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/" class="next" rel="next" title="Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)">Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.109.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="www.ytiancompbio.com" target="_blank">Yuan Tian</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://naity.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Preprints - Category - Yuan Tian</title>
+        <link>http://example.org/categories/preprints/</link>
+        <description>Preprints - Category - Yuan Tian</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>
+            <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster><copyright>Yuan Tian</copyright><lastBuildDate>Sat, 01 Jan 2022 00:00:00 -0800</lastBuildDate><atom:link href="http://example.org/categories/preprints/" rel="self" type="application/rss+xml" /><item>
+    <title>Robust Normalization and Integration of Single-cell Protein Expression across CITE-seq Datasets</title>
+    <link>http://example.org/publications/normalization/</link>
+    <pubDate>Sat, 01 Jan 2022 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/normalization/</guid>
+    <description><![CDATA[CITE-seq technology enables the direct measurement of protein expression, known as antibody-derived tags (ADT), in addition to RNA expression. The increase in the copy number of protein molecules leads to a more robust detection of protein features compared to RNA, providing a deep definition of cell types. However, due to added discrepancies of antibodies, such as the different types or concentrations of IgG antibodies, the batch effects of the ADT component of CITE-seq can dominate over biological variations, especially for the across-study integration. We present ADTnorm as a normalization and integration method designed explicitly for the ADT counts of CITE-seq data. Benchmarking with existing scaling and normalization methods, ADTnorm achieves a fast and accurate matching of the negative and positive peaks of the ADT counts across samples, efficiently removing technical variations across batches. Further quantitative evaluations confirm that ADTnorm achieves the best cell-type separation while maintaining the minimal batch effect. Therefore, ADTnorm facilitates the scalable ADT count integration of massive public CITE-seq datasets with distinguished experimental designs, which are essential for creating a corpus of well-annotated single-cell data with deep and standardized annotations.]]></description>
+</item>
+<item>
+    <title>Superscan: Supervised Single-Cell Annotation</title>
+    <link>http://example.org/publications/superscan/</link>
+    <pubDate>Fri, 01 Jan 2021 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/superscan/</guid>
+    <description><![CDATA[Automated cell type annotation of single-cell RNA-seq data has the potential to significantly improve and streamline single cell data analysis, facilitating comparisons and meta-analyses. However, many of the current state-of-the-art techniques suffer from limitations, such as reliance on a single reference dataset or marker gene set, or excessive run times for large datasets. Acquiring high-quality labeled data to use as a reference can be challenging. With CITE-seq, surface protein expression of cells can be directly measured in addition to the RNA expression, facilitating cell type annotation. Here, we compiled and annotated a collection of 16 publicly available CITE-seq datasets. This data was then used as training data to develop Superscan, a supervised machine learning-based prediction model. Using our 16 reference datasets, we benchmarked Superscan and showed that it performs better in terms of both accuracy and speed when compared to other state-of-the-art cell annotation methods. Superscan is pre-trained on a collection of primarily PBMC immune datasets; however, additional data and cell types can be easily added to the training data for further improvement. Finally, we used Superscan to reanalyze a previously published dataset, demonstrating its applicability even when the dataset includes cell types that are missing from the training set.]]></description>
+</item>
+<item>
+    <title>Immuno-proteomic interrogation of dengue infection reveals novel HLA haplotype-specific MHC-I antigens</title>
+    <link>http://example.org/publications/dengue-antigens/</link>
+    <pubDate>Mon, 01 Jan 2018 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/dengue-antigens/</guid>
+    <description><![CDATA[Broadly effective vaccines against dengue virus (DENV) infection have remained elusive, despite rising infection rates in the developing world. Infection-specific peptide ligands presented on Major Histocompatibility Complexes (MHC) open new avenues for developing T-cell-based interventions. Past efforts towards mapping viral MHC epitopes were based on computational predictions that only partially reflected actual antigen presentation. To empirically identify DENV-specific MHC ligands, we developed an immuno-proteomics approach for interrogating DENV- and self-derived MHC ligands from infected B-lymphocytes. Here, we report four fundamental findings: First, over 700 infection-specific MHC-ligands reflected host cellular responses to DENV that were not apparent from the proteome. Second, we report 121 viral MHC-I ligands (108 novel) which clustered into discrete hotspots across the DENV polyprotein, some of which spanned DENV polyprotein components, described here as MHC ligands for the first time. Third, we found DENV ligands which were distinctly presented by MHC alleles previously associated with either high or low anti-DENV response. Fourth, we demonstrate that while our in vitro assay only overlapped with a small fraction of previously described DENV T-cell epitopes, several novel MHC ligands identified here were recognized by T-cells from DENV-infected patients despite having low binding affinities. Together, these discoveries suggest that virus and host-derived MHC ligands have under-exploited potential for describing the cell biology of DENV infection, and as candidates for designing effective DENV vaccines.]]></description>
+</item>
+</channel>
+</rss>

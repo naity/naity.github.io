@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Integrating image and tabular data for deep learning - Yuan Tian</title><meta name="Description" content="Use fastai and image_tabular to integrate image and tabular data for deep learning and train a joint model using the integrated data."><meta property="og:title" content="Integrating image and tabular data for deep learning" />
+<meta property="og:description" content="Use fastai and image_tabular to integrate image and tabular data for deep learning and train a joint model using the integrated data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" /><meta property="og:image" content="http://example.org/integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-17T00:00:00-08:00" />
+<meta property="article:modified_time" content="2020-06-17T00:00:00-08:00" /><meta property="og:site_name" content="Yuan Tian" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg"/>
+<meta name="twitter:title" content="Integrating image and tabular data for deep learning"/>
+<meta name="twitter:description" content="Use fastai and image_tabular to integrate image and tabular data for deep learning and train a joint model using the integrated data."/>
+<meta name="application-name" content="Yuan Tian">
+<meta name="apple-mobile-web-app-title" content="Yuan Tian"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" /><link rel="prev" href="http://example.org/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Integrating image and tabular data for deep learning",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/integrating-image-and-tabular-data-for-deep-learning\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/example.org\/integrating-image-and-tabular-data-for-deep-learning\/featured-image.jpeg",
+                            "width":  700 ,
+                            "height":  525 
+                        }],"genre": "posts","keywords": "Deep Learning, Machine Learning","wordcount":  1195 ,
+        "url": "http:\/\/example.org\/integrating-image-and-tabular-data-for-deep-learning\/","datePublished": "2020-06-17T00:00:00-08:00","dateModified": "2020-06-17T00:00:00-08:00","license": "Yuan Tian","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Yuan Tian"
+            },"description": "Use fastai and image_tabular to integrate image and tabular data for deep learning and train a joint model using the integrated data."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Yuan Tian">Yuan Tian</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/publications/"> Publications </a><a class="menu-item" href="/photos/"> Photography </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Yuan Tian">Yuan Tian</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/publications/" title="">Publications</a><a class="menu-item" href="/photos/" title="">Photography</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Integrating image and tabular data for deep learning</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.ytiancompbio.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Yuan Tian</a></span>&nbsp;<span class="post-category">included in <a href="/categories/machine-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Machine Learning</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="06/17/2020">06/17/2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1195 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg"
+        data-srcset="/integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg, /integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg 1.5x, /integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg 2x"
+        data-sizes="auto"
+        alt="/integrating-image-and-tabular-data-for-deep-learning/featured-image.jpeg"
+        title="Use fastai and image_tabular to integrate image and tabular data for deep learning and train a joint model using the integrated data." /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-siim-isic-dataset">The SIIM-ISIC Dataset</a></li>
+    <li><a href="#the-approach">The Approach</a></li>
+    <li><a href="#implementation-with-the-image_tabular-library">Implementation with the image_tabular library</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#source-code">Source Code</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>        <font size="6">I</font> <font size="4">recently participated in the SIIM-ISIC Melanoma Classification competition on Kaggle. In this competition, participants are asked to identify melanoma in images of skin lesions. Interestingly, they also provide metadata about the patient and the anatomic site in addition to the image. In essence, we have both image and structured or tabular data for each example. For the image, we can use a CNN-based model, and for the tabular data, we can use embeddings and fully connected layers as explored in my previous posts on UFC and League of Legends predictions. It is easy to build two separate models for each data modality. But what if we want to build a joint model that trains on both data modalities simultaneously? There are inspiring discussions in the competition forum including this thread. In this post, I will demonstrate how to integrate the two data modalities and train a joint deep learning model using fastai and the image_tabular library, which I created specifically for these tasks.</font></p>
+<h2 id="the-siim-isic-dataset">The SIIM-ISIC Dataset</h2>
+<p>The SIIM-ISIC Melanoma Classification dataset can be downloaded here. The training set consists of 32542 benign images and 584 malignant melanoma images. Please note that this dataset is extremely unbalanced. The picture below shows one example from each class. It seems that malignant lesions are larger and more diffused than benign ones.</p>
+<p><figure><a class="lightgallery" href="/integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png" title="Benign versus malignant" data-thumbnail="/integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png" data-sub-html="<h2>Benign versus malignant</h2><p>Benign versus malignant</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png"
+            data-srcset="/integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png, /integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png 1.5x, /integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png 2x"
+            data-sizes="auto"
+            alt="/integrating-image-and-tabular-data-for-deep-learning/benign_vs_malignant.png" width="683" height="237" />
+    </a><figcaption class="image-caption">Benign versus malignant</figcaption>
+    </figure></p>
+<p>As mentioned above, there are metadata available in addition to the images as shown below:</p>
+<p><figure><a class="lightgallery" href="/integrating-image-and-tabular-data-for-deep-learning/metadata.png" title="Metadata as a Pandas dataframe" data-thumbnail="/integrating-image-and-tabular-data-for-deep-learning/metadata.png" data-sub-html="<h2>Metadata as a Pandas dataframe</h2><p>Metadata as a Pandas dataframe</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/integrating-image-and-tabular-data-for-deep-learning/metadata.png"
+            data-srcset="/integrating-image-and-tabular-data-for-deep-learning/metadata.png, /integrating-image-and-tabular-data-for-deep-learning/metadata.png 1.5x, /integrating-image-and-tabular-data-for-deep-learning/metadata.png 2x"
+            data-sizes="auto"
+            alt="/integrating-image-and-tabular-data-for-deep-learning/metadata.png" width="700" height="164" />
+    </a><figcaption class="image-caption">Metadata as a Pandas dataframe</figcaption>
+    </figure></p>
+<p>We can perform some basic analysis to investigate whether some of these features are associated with the target. Interestingly, males are more likely to have malignant melanoma than females, and age also seems to be a risk factor of having malignant melanoma as shown below. In addition, the frequency of malignancy melanoma differs between the locations of the imaged site with the head/neck showing the highest malignancy rate. Therefore, these features contain useful information, and combining them with the images could help our model make better predictions. This makes sense as doctors will probably not only examine images of skin lesions but also consider additional factors in order to make a diagnosis.</p>
+<p><figure><a class="lightgallery" href="/integrating-image-and-tabular-data-for-deep-learning/bar.png" title="Metadata features are associated with the target" data-thumbnail="/integrating-image-and-tabular-data-for-deep-learning/bar.png" data-sub-html="<h2>Metadata features are associated with the target</h2><p>Metadata features are associated with the target</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/integrating-image-and-tabular-data-for-deep-learning/bar.png"
+            data-srcset="/integrating-image-and-tabular-data-for-deep-learning/bar.png, /integrating-image-and-tabular-data-for-deep-learning/bar.png 1.5x, /integrating-image-and-tabular-data-for-deep-learning/bar.png 2x"
+            data-sizes="auto"
+            alt="/integrating-image-and-tabular-data-for-deep-learning/bar.png" width="700" height="282" />
+    </a><figcaption class="image-caption">Metadata features are associated with the target</figcaption>
+    </figure></p>
+<h2 id="the-approach">The Approach</h2>
+<p>Our approach to integrating both image and tabular data is very similar to the one taken by the winners of the ISIC 2019 Skin Lesion Classification Challenge as described in their paper and shown in the picture below. Basically, we first load the image and tabular data for each sample, which are fed into a CNN model and a fully connected neural network, respectively. Subsequently, the outputs from the two networks will be concatenated and fed into an additional fully connected neural network to generate final predictions.</p>
+<p><figure><a class="lightgallery" href="/integrating-image-and-tabular-data-for-deep-learning/arch.png" title="network" data-thumbnail="/integrating-image-and-tabular-data-for-deep-learning/arch.png" data-sub-html="<h2>N. Gessert, M. Nielsen, and M. Shaikh et al. / MethodsX 7 (2020) 100864</h2><p>network</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/integrating-image-and-tabular-data-for-deep-learning/arch.png"
+            data-srcset="/integrating-image-and-tabular-data-for-deep-learning/arch.png, /integrating-image-and-tabular-data-for-deep-learning/arch.png 1.5x, /integrating-image-and-tabular-data-for-deep-learning/arch.png 2x"
+            data-sizes="auto"
+            alt="/integrating-image-and-tabular-data-for-deep-learning/arch.png" width="700" height="252" />
+    </a><figcaption class="image-caption">N. Gessert, M. Nielsen, and M. Shaikh et al. / MethodsX 7 (2020) 100864</figcaption>
+    </figure></p>
+<h2 id="implementation-with-the-image_tabular-library">Implementation with the image_tabular library</h2>
+<p>To implement the idea, we will be using Pytorch and fastai. More specifically, we will use fastai to load the image and tabular data and package them into fastai LabelLists.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># load image data using train_df and prepare fastai LabelLists</span>
+</span></span><span class="line"><span class="cl"><span class="n">image_data</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ImageList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">train_df</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">data_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s2">&#34;image_name&#34;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">&#34;train_128&#34;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&#34;.jpg&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">split_by_idx</span><span class="p">(</span><span class="n">val_idx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="s2">&#34;target&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">tfms</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add test data so that we can make predictions</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_image_data</span> <span class="o">=</span> <span class="n">ImageList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">test_df</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">data_path</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s2">&#34;image_name&#34;</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">&#34;test_128&#34;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&#34;.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">image_data</span><span class="o">.</span><span class="n">add_test</span><span class="p">(</span><span class="n">test_image_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">tab_data</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TabularList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">train_df</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">path</span><span class="o">=</span><span class="n">data_path</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cat_names</span><span class="o">=</span><span class="n">cat_names</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cont_names</span><span class="o">=</span><span class="n">cont_names</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">procs</span><span class="o">=</span><span class="n">procs</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">split_by_idx</span><span class="p">(</span><span class="n">val_idx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="n">label_from_df</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="n">dep_var</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add test</span>
+</span></span><span class="line"><span class="cl"><span class="n">tab_data</span><span class="o">.</span><span class="n">add_test</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TabularList</span><span class="o">.</span><span class="n">from_df</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">test_df</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cat_names</span><span class="o">=</span><span class="n">cat_names</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cont_names</span><span class="o">=</span><span class="n">cont_names</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">processor</span><span class="o">=</span><span class="n">tab_data</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">processor</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Next, we will integrate the two data modalities using the image_tabular library, which can be installed by running:</p>
+<p><code>pip install image_tabular</code></p>
+<p>We will use the get_imagetabdatasets function from image_tabular to integrate image and tabular LabelLists.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">integrate_train</span><span class="p">,</span> <span class="n">integrate_valid</span><span class="p">,</span> <span class="n">integrate_test</span> <span class="o">=</span> <span class="n">get_imagetabdatasets</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image_data</span><span class="p">,</span> <span class="n">tab_data</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># package train, valid, and test datasets into a fastai databunch</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">DataBunch</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">integrate_train</span><span class="p">,</span> <span class="n">integrate_valid</span><span class="p">,</span> <span class="n">integrate_test</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">data_path</span><span class="p">,</span> <span class="n">bs</span><span class="o">=</span><span class="n">bs</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The databunch contains both image and tabular data and is ready to be used for training and prediction.</p>
+<p>Once the data is ready, we can then move on to build the model. First, we need to create a CNN model, resnet50 in this case, and a tabular model using fastai. We will treat sex and anatomic site as categorical features and represent them using embeddings in the tabular model.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># cnn model for images, use Resnet50 as an example</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnn_arch</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cnn_out_sz is the output size of the cnn model that will be concatenated with tabular model output</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnn_out_sz</span> <span class="o">=</span> <span class="mi">256</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use fastai functions to get a cnn model</span>
+</span></span><span class="line"><span class="cl"><span class="n">image_data_db</span> <span class="o">=</span> <span class="n">image_data</span><span class="o">.</span><span class="n">databunch</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">image_data_db</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">cnn_out_sz</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnn_learn</span> <span class="o">=</span> <span class="n">cnn_learner</span><span class="p">(</span><span class="n">image_data_db</span><span class="p">,</span> <span class="n">cnn_arch</span><span class="p">,</span> <span class="n">ps</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnn_model</span> <span class="o">=</span> <span class="n">cnn_learn</span><span class="o">.</span><span class="n">model</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># get embedding sizes of categorical data</span>
+</span></span><span class="line"><span class="cl"><span class="n">emb_szs</span> <span class="o">=</span> <span class="n">tab_data</span><span class="o">.</span><span class="n">train</span><span class="o">.</span><span class="n">get_emb_szs</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># output size of the tabular model that will be concatenated with cnn model output</span>
+</span></span><span class="line"><span class="cl"><span class="n">tab_out_sz</span> <span class="o">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use fastai functions to get a tabular model</span>
+</span></span><span class="line"><span class="cl"><span class="n">tabular_model</span> <span class="o">=</span> <span class="n">TabularModel</span><span class="p">(</span><span class="n">emb_szs</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cont_names</span><span class="p">),</span> <span class="n">out_sz</span><span class="o">=</span><span class="n">tab_out_sz</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">ps</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We are now ready to build a joint model, again using the image_tabular library. We can customize the fully connected layers by specifying the layers parameter.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># get an integrated model that combines the two components and concatenate their outputs</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># which will pass through additional fully connected layers</span>
+</span></span><span class="line"><span class="cl"><span class="n">integrate_model</span> <span class="o">=</span> <span class="n">CNNTabularModel</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cnn_model</span><span class="p">,</span> <span class="n">tabular_model</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">cnn_out_sz</span> <span class="o">+</span> <span class="n">tab_out_sz</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span> <span class="n">ps</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">out_sz</span><span class="o">=</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Finally, we can pack everything into a fastai learner and train the joint model.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># package everything in a fastai learner, add auc roc score as a metric</span>
+</span></span><span class="line"><span class="cl"><span class="n">learn</span> <span class="o">=</span> <span class="n">Learner</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">integrate_model</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">ROCAUC</span><span class="p">()],</span> <span class="n">loss_func</span><span class="o">=</span><span class="n">loss_func</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># train</span>
+</span></span><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># unfreeze all layer groups to train the entire model using differential learning rates</span>
+</span></span><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">learn</span><span class="o">.</span><span class="n">fit_one_cycle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The entire workflow is detailed in this Jupyter notebook.</p>
+<h2 id="results">Results</h2>
+<p>The model achieved a ROC AUC score of about 0.87 on the validation set after training for 15 epochs. I subsequently submitted the predictions made by the trained model on the test set to Kaggle and got a public score of 0.864. There is definitely much room for improvement.</p>
+<p><figure><a class="lightgallery" href="/integrating-image-and-tabular-data-for-deep-learning/kaggle.png" title="Kaggle public score" data-thumbnail="/integrating-image-and-tabular-data-for-deep-learning/kaggle.png" data-sub-html="<h2>Kaggle public score</h2><p>Kaggle public score</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/integrating-image-and-tabular-data-for-deep-learning/kaggle.png"
+            data-srcset="/integrating-image-and-tabular-data-for-deep-learning/kaggle.png, /integrating-image-and-tabular-data-for-deep-learning/kaggle.png 1.5x, /integrating-image-and-tabular-data-for-deep-learning/kaggle.png 2x"
+            data-sizes="auto"
+            alt="/integrating-image-and-tabular-data-for-deep-learning/kaggle.png" width="700" height="90" />
+    </a><figcaption class="image-caption">Kaggle public score</figcaption>
+    </figure></p>
+<h2 id="summary">Summary</h2>
+<p>In this post, we used fastai and image_tabular to integrate image and tabular data and built a joint model trained on both data modalities simultaneously. As noted above, there are many opportunities for further improvement. For example, we can try more advanced CNN architectures such as ResNeXt. Another question would be how many neurons should we allocate for image and tabular data before concatenation, in other words, how should we decide the relative importance or weights of the two data modalities? I hope this could serve as a framework for further experimentation and improvement.</p>
+<h2 id="source-code">Source Code</h2>
+<p>The source code of image_tabular and jupyter notebooks for the SIIM-ISIC Melanoma Classification competition can be found <a href="https://github.com/naity/image_tabular" target="_blank" rel="noopener noreffer ">here</a>.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>The <a href="https://github.com/naity/image_tabular" target="_blank" rel="noopener noreffer ">image_tabular</a> library relies on the fantastic <a href="https://github.com/fastai/fastai" target="_blank" rel="noopener noreffer ">fastai</a> library and was inspired by the <a href="https://gist.github.com/jwuphysics/f19162d38e1b4fed0030b96411186c3a" target="_blank" rel="noopener noreffer ">code</a> of John F. Wu.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 06/17/2020</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/integrating-image-and-tabular-data-for-deep-learning/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" data-title="Integrating image and tabular data for deep learning" data-via="_ytian_" data-hashtags="Deep Learning,Machine Learning"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" data-hashtag="Deep Learning"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://example.org/integrating-image-and-tabular-data-for-deep-learning/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" data-title="Integrating image and tabular data for deep learning"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" data-title="Integrating image and tabular data for deep learning"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/integrating-image-and-tabular-data-for-deep-learning/" data-title="Integrating image and tabular data for deep learning"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/deep-learning/">Deep Learning</a>,&nbsp;<a href="/tags/machine-learning/">Machine Learning</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/" class="prev" rel="prev" title="Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.109.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="www.ytiancompbio.com" target="_blank">Yuan Tian</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://naity.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

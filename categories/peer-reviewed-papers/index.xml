@@ -1,0 +1,88 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Peer-reviewed Papers - Category - Yuan Tian</title>
+        <link>http://example.org/categories/peer-reviewed-papers/</link>
+        <description>Peer-reviewed Papers - Category - Yuan Tian</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>
+            <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster><copyright>Yuan Tian</copyright><lastBuildDate>Mon, 01 Aug 2022 00:00:00 -0800</lastBuildDate><atom:link href="http://example.org/categories/peer-reviewed-papers/" rel="self" type="application/rss+xml" /><item>
+    <title>Th2-Biased Transcriptional Profile Predicts HIV Envelope-Specific Polyfunctional CD4&#43; T Cells That Correlated with Reduced Risk of Infection in RV144 Trial</title>
+    <link>http://example.org/publications/hiv/</link>
+    <pubDate>Mon, 01 Aug 2022 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/hiv/</guid>
+    <description><![CDATA[Ag-specific T cells play a critical role in responding to viral infections. In the RV144 HIV vaccine clinical trial, a rare subset of HIV-specific polyfunctional CD4+ T cells correlated with reduced risk of HIV-1 infection. Polyfunctional T cells are a subset of Ag-specific T cells that are able to simultaneously produce multiple effector cytokines. Little is known about what differentiates polyfunctional T cells from other vaccine-elicited T cells in humans. Therefore, we developed a novel live-cell multiplexed cytokine capture assay to identify, isolate, and transcriptionally profile vaccine-specific polyfunctional CD4+ T cells. We applied these methods to samples from subjects who received the RV144 vaccine regimen, as part of the HVTN 097 clinical trial. We identified two surface receptors (CD44 and CD82) upregulated on polyfunctional T cells and a Th2-biased transcriptional signature (IL-4, IL-5, and IL-13) that predicted the envelope-specific polyfunctional CD4+ T cell profiles that had correlated with reduced risk of HIV infection in RV144. By linking single-cell transcriptional and functional profiles, we may be able to further define the potential contributions of polyfunctional T cells to effective vaccine-elicited immunity.]]></description>
+</item>
+<item>
+    <title>A Population of CD4&#43;CD8&#43; Double-Positive T Cells Associated with Risk of Plasma Leakage in Dengue Viral Infection</title>
+    <link>http://example.org/publications/leakage/</link>
+    <pubDate>Wed, 05 Jan 2022 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/leakage/</guid>
+    <description><![CDATA[According to the WHO 2009 classification, dengue with warning signs is at the risk of developing severe form of dengue disease. One of the most important warning signs is plasma leakage, which can be a serious complication associated with higher morbidity and mortality. We report that the frequency of CD4+CD8+ double-positive (DP) T cells is significantly increased in patients at risk of developing plasma leakage. Transcriptomic analysis demonstrated that CD4+CD8+ DP cells were distinct from CD4+ Single Positive (SP) T cells but co-clustered with CD8+ SP cells, indicating a largely similar transcriptional profile. Twenty significant differentially expressed (DE) genes were identified between CD4+CD8+ DP and CD8+ SP cells. These genes encode OX40 and CCR4 proteins as well as other molecules associated with cell signaling on the cell surface (NT5E, MXRA8, and PTPRK). While comparing the profile of gene expression in CD4+CD8+ DP cells from patients with and without warning signs of plasma leakage, similar expression profile was observed, implying a role of CD4+CD8+ DP cells in plasma leakage through a quantitative increase rather than functional alteration. This study provided novel insight into the host immune response during the acute febrile phase of DENV infection and the role of CD4+CD8+ DP T cells in the pathogenesis of plasma leakage.]]></description>
+</item>
+<item>
+    <title>Single-cell immunology of SARS-CoV-2 infection</title>
+    <link>http://example.org/publications/covid-review/</link>
+    <pubDate>Mon, 20 Dec 2021 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/covid-review/</guid>
+    <description><![CDATA[Gaining a better understanding of the immune cell subsets and molecular factors associated with protective or pathological immunity against severe acute respiratory syndrome coronavirus (SARS-CoV)-2 could aid the development of vaccines and therapeutics for coronavirus disease 2019 (COVID-19). Single-cell technologies, such as flow cytometry, mass cytometry, single-cell transcriptomics and single-cell multi-omic profiling, offer considerable promise in dissecting the heterogeneity of immune responses among individual cells and uncovering the molecular mechanisms of COVID-19 pathogenesis. Single-cell immune-profiling studies reported to date have identified innate and adaptive immune cell subsets that correlate with COVID-19 disease severity, as well as immunological factors and pathways of potential relevance to the development of vaccines and treatments for COVID-19. For facilitation of integrative studies and meta-analyses into the immunology of SARS-CoV-2 infection, we provide standardized, download-ready versions of 21 published single-cell sequencing datasets (over 3.2 million cells in total) as well as an interactive visualization portal for data exploration.]]></description>
+</item>
+<item>
+    <title>A system-view of Bordetella pertussis booster vaccine responses in adults primed with whole-cell versus acellular vaccine in infancy</title>
+    <link>http://example.org/publications/pertussis/</link>
+    <pubDate>Thu, 08 Apr 2021 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/pertussis/</guid>
+    <description><![CDATA[The increased incidence of whooping cough worldwide suggests that current vaccination against Bordetella pertussis infection has limitations in quality and duration of protection. The resurgence of infection has been linked to the introduction of acellular vaccines (aP), which have an improved safety profile compared with the previously used whole-cell (wP) vaccines. To determine immunological differences between aP and wP priming in infancy, we performed a systems approach of the immune response to booster vaccination. Transcriptomic, proteomic, cytometric, and serologic profiling revealed multiple shared immune responses with different kinetics across cohorts, including an increase of blood monocyte frequencies and strong antigen-specific IgG responses. Additionally, we found a prominent subset of aP-primed individuals (30%) with a strong differential signature, including higher levels of expression for CCL3, NFKBIA, and ICAM1. Contrary to the wP individuals, this subset displayed increased PT-specific IgE responses after boost and higher antigen-specific IgG4 and IgG3 antibodies against FHA and FIM2/3 at baseline and after boost. Overall, the results show that, while broad immune response patterns to Tdap boost overlap between aP- and wP-primed individuals, a subset of aP-primed individuals present a divergent response. These findings provide candidate targets to study the causes and correlates of waning immunity after aP vaccination.]]></description>
+</item>
+<item>
+    <title>Molecular Signatures of Dengue Virus-Specific IL-10/IFN-γ Co-producing CD4 T Cells and Their Association with Dengue Disease</title>
+    <link>http://example.org/publications/dengue_cd4/</link>
+    <pubDate>Tue, 24 Dec 2019 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/dengue_cd4/</guid>
+    <description><![CDATA[Dengue virus (DENV) can cause diseases ranging from dengue fever (DF) to more severe dengue hemorrhagic fever/dengue shock syndrome (DHF/DSS). Whether antiviral T cells contribute to the protection against or pathogenesis of severe disease is not well defined. Here, we identified antigen-specific IL-10+IFN-γ+ double-positive (DP) CD4 T cells during acute DENV infection. While the transcriptomic signatures of DP cells partially overlapped with those of cytotoxic and type 1 regulatory CD4 T cells, the majority of them were non-cytotoxic/Tr1 and included IL21, IL22, CD109, and CCR1. Although we observed a higher frequency of DP cells in DHF, the transcriptomic profile of DP cells was similar in DF and DHF, suggesting that DHF is not associated with the altered phenotypic or functional attributes of DP cells. Overall, this study revealed a DENV-specific DP cell subset in patients with acute dengue disease and argues against altered DP cells as a determinant of DHF."]]></description>
+</item>
+<item>
+    <title>Transcriptomic immune profiles of human flavivirus‐specific T‐cell responses</title>
+    <link>http://example.org/publications/flavivirus-review/</link>
+    <pubDate>Thu, 28 Nov 2019 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/flavivirus-review/</guid>
+    <description><![CDATA[The Flavivirus genus of viruses includes dengue (DENV), Zika (ZIKV), yellow fever (YFV), Japanese encephalitis (JEV), and West Nile (WNV) viruses. Infections with these species combined are prevalent in tropical and sub-tropical areas, affecting millions of people and ranging from asymptomatic to severe forms of the disease. They therefore pose a serious threat to global public health. Several studies imply a role for T cells in the protection but also pathogenesis against the different flavivirus species. Identifying flavivirus-specific T-cell immune profiles and determining how pre-exposure of one species might affect the immune response against subsequent infections from other species is important to further define the role of T cells in the immune response against infection. Understanding the immune profiles of the flavivirus-specific T-cell response in natural infection is important to understand the T-cell response in the context of vaccination. In this review, we summarize the current knowledge on human immune profiles of flavivirus-specific T-cell reactivity, comparing natural infection with the acute form of the disease and vaccination in different flavivirus infections.]]></description>
+</item>
+<item>
+    <title>Human T cell response to dengue virus infection</title>
+    <link>http://example.org/publications/dengue-review/</link>
+    <pubDate>Wed, 04 Sep 2019 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/dengue-review/</guid>
+    <description><![CDATA[DENV is a major public health problem worldwide, thus underlining the overall significance of the proposed Program. The four dengue virus (DENV) serotypes (1-4) cause the most common mosquito-borne viral disease of humans, with 3 billion people at risk for infection and up to 100 million cases each year, most often affecting children. The protective role of T cells during viral infection is well established. Generally, CD8 T cells can control viral infection through several mechanisms, including direct cytotoxicity and production of pro-inflammatory cytokines such as IFN- and TNF-. Similarly, CD4 T cells are thought to control viral infection through multiple mechanisms, including enhancement of B and CD8 T cell responses, production of inflammatory and anti-viral cytokines, cytotoxicity, and promotion of memory responses. To probe the phenotype of virus-specific T cells, epitopes derived from viral sequences need to be known. Here we discuss the identification of CD4 and CD8 T cell epitopes derived from DENV and how these epitopes have been used by researchers to interrogate the phenotype and function of DENV-specific T cell populations.]]></description>
+</item>
+<item>
+    <title>A Modified Injector and Sample Acquisition Protocol Can Improve Data Quality and Reduce Inter‐Instrument Variability of the Helios Mass Cytometer</title>
+    <link>http://example.org/publications/cytof/</link>
+    <pubDate>Tue, 30 Jul 2019 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/cytof/</guid>
+    <description><![CDATA[Mass cytometry is a powerful tool for high-dimensional single cell characterization. Since the introduction of the first commercial CyTOF mass cytometer by DVS Sciences in 2009, mass cytometry technology has matured and become more widely utilized, with sequential platform upgrades designed to address specific limitations and to expand the capabilities of the platform. Fluidigm's third-generation Helios mass cytometer introduced a number of upgrades over the previous CyTOF2. One of these new features is a modified narrow bore sample injector that generates smaller ion clouds, which is expected to improve sensitivity and throughput. However, following rigorous testing, we find that the narrow-bore sample injector may have unintended negative consequences on data quality and result in lower median and higher coefficients of variation in many antibody-associated signal intensities. We describe an alternative Helios acquisition protocol using a wider bore injector, which largely mitigates these data quality issues. We directly compare these two protocols in a multisite study of 10 Helios instruments across 7 institutions and show that the modified protocol improves data quality and reduces interinstrument variability. These findings highlight and address an important source of technical variability in mass cytometry experiments that is of particular relevance in the setting of multicenter studies. © 2019 International Society for Advancement of Cytometry.]]></description>
+</item>
+<item>
+    <title>Dengue-specific CD8&#43; T cell subsets display specialized transcriptomic and TCR profiles</title>
+    <link>http://example.org/publications/dengue_cd8/</link>
+    <pubDate>Mon, 01 Apr 2019 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/dengue_cd8/</guid>
+    <description><![CDATA[Accumulating evidence demonstrates that CD8+ T cells contribute to protection from severe dengue virus (DENV) disease and vaccine efficacy. Nevertheless, molecular programs associated with DENV-specific CD8+ T cell subsets have not been defined. Here, we studied the transcriptomic profiles of human DENV-specific CD8+ T cells isolated after stimulation with DENV epitopes from donors who had been infected with DENV multiple times and would therefore be expected to have significant levels of adaptive immunity. We found that DENV-specific CD8+ T cells mainly consisted of effector memory subsets, namely CD45RA−CCR7− effector memory (Tem) and CD45RA+CCR7− effector memory re-expressing CD45RA (Temra) cells, which enacted specific gene expression profiles upon stimulation with cognate antigens. DENV-specific CD8+ T cell subsets in general, and Temra cells in particular, were fully activated and polyfunctional, yet associated with relatively narrow transcriptional responses. Furthermore, we found that DENV-specific CD8+ Tem and Temra cells showed some unique T cell receptor features in terms of overlap and variable (V) gene usage. This study provides a transcriptomic definition of DENV-specific activated human CD8+ T cell subsets and defines a benchmark profile that vaccine-specific responses could aim to reproduce.]]></description>
+</item>
+<item>
+    <title>Cutting edge: transcriptional profiling reveals multifunctional and cytotoxic antiviral responses of Zika virus–specific CD8&#43; T cells</title>
+    <link>http://example.org/publications/zika/</link>
+    <pubDate>Sat, 15 Dec 2018 00:00:00 -0800</pubDate>
+    <author>Yuan Tian</author>
+    <guid>http://example.org/publications/zika/</guid>
+    <description><![CDATA[Zika virus (ZIKV) constitutes an increasing public health problem. Previous studies have shown that CD8+ T cells play an important role in ZIKV-specific protective immunity. We have previously defined antigenic targets of the ZIKV-specific CD8+ T cell response in humans. In this study, we characterized the quality and phenotypes of these responses by a combined use of flow cytometry and transcriptomic methods, using PBMCs from donors deriving from different geographical locations collected in the convalescent phase of infection. We show that ZIKV-specific CD8+ T cells are characterized by a polyfunctional IFN-γ signature with upregulation of TNF-α, TNF receptors, and related activation markers, such as CD69, as well as a cytotoxic signature characterized by strong upregulation of GZMB and CRTAM. The signature is stable and not influenced by previous dengue virus exposure, geographical location, or time of sample collection postinfection. To our knowledge, this work elucidates the first in-depth characterization of human CD8+ T cells responding to ZIKV infection.]]></description>
+</item>
+</channel>
+</rss>
