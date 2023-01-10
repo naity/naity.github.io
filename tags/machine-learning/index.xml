@@ -1,31 +1,31 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Machine Learning - Tag - Yuan Tian</title>
-        <link>http://example.org/tags/machine-learning/</link>
+        <link>https://naity.github.io/tags/machine-learning/</link>
         <description>Machine Learning - Tag - Yuan Tian</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>
-            <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster><copyright>Yuan Tian</copyright><lastBuildDate>Wed, 17 Jun 2020 00:00:00 -0800</lastBuildDate><atom:link href="http://example.org/tags/machine-learning/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster><copyright>Yuan Tian</copyright><lastBuildDate>Wed, 17 Jun 2020 00:00:00 -0800</lastBuildDate><atom:link href="https://naity.github.io/tags/machine-learning/" rel="self" type="application/rss+xml" /><item>
     <title>Integrating image and tabular data for deep learning</title>
-    <link>http://example.org/integrating-image-and-tabular-data-for-deep-learning/</link>
+    <link>https://naity.github.io/integrating-image-and-tabular-data-for-deep-learning/</link>
     <pubDate>Wed, 17 Jun 2020 00:00:00 -0800</pubDate>
     <author>Yuan Tian</author>
-    <guid>http://example.org/integrating-image-and-tabular-data-for-deep-learning/</guid>
+    <guid>https://naity.github.io/integrating-image-and-tabular-data-for-deep-learning/</guid>
     <description><![CDATA[Use fastai and image_tabular to integrate image and tabular data for deep learning and train a joint model using the integrated data.]]></description>
 </item>
 <item>
     <title>Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)</title>
-    <link>http://example.org/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/</link>
+    <link>https://naity.github.io/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/</link>
     <pubDate>Sat, 14 Sep 2019 00:00:00 -0800</pubDate>
     <author>Yuan Tian</author>
-    <guid>http://example.org/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/</guid>
+    <guid>https://naity.github.io/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning/</guid>
     <description><![CDATA[Autoencoder for integrative analysis of CITE-seq data.]]></description>
 </item>
 <item>
     <title>ReFocus: Making Out-of-Focus Microscopy Images In-Focus Again</title>
-    <link>http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/</link>
+    <link>https://naity.github.io/refocus-making-out-of-focus-microscopy-images-in-focus-again/</link>
     <pubDate>Mon, 22 Apr 2019 00:00:00 -0800</pubDate>
     <author>Yuan Tian</author>
-    <guid>http://example.org/refocus-making-out-of-focus-microscopy-images-in-focus-again/</guid>
+    <guid>https://naity.github.io/refocus-making-out-of-focus-microscopy-images-in-focus-again/</guid>
     <description><![CDATA[Use deep learning to refocus out-of-focus microscopy images.]]></description>
 </item>
 </channel>
