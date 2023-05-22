@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Yuan Tian</title>
+    <title>Publications on Yuan Tian — Bioinformatics, Immunology, and Machine Learning</title>
     <link>https://naity.github.io/publications/</link>
-    <description>Recent content in Publications on Yuan Tian</description>
+    <description>Recent content in Publications on Yuan Tian — Bioinformatics, Immunology, and Machine Learning</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>

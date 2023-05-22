@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Autoencoder - Tag - Yuan Tian</title>
+        <title>Autoencoder - Tag - Yuan Tian — Bioinformatics, Immunology, and Machine Learning</title>
         <link>https://naity.github.io/tags/autoencoder/</link>
-        <description>Autoencoder - Tag - Yuan Tian</description>
+        <description>Autoencoder - Tag - Yuan Tian — Bioinformatics, Immunology, and Machine Learning</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>ytiancompbio@gmail.com (Yuan Tian)</managingEditor>
             <webMaster>ytiancompbio@gmail.com (Yuan Tian)</webMaster><copyright>Yuan Tian</copyright><lastBuildDate>Sat, 14 Sep 2019 00:00:00 -0800</lastBuildDate><atom:link href="https://naity.github.io/tags/autoencoder/" rel="self" type="application/rss+xml" /><item>
     <title>Integrative analysis of single-cell multi-omics data using deep learning (with video tutorials)</title>
