@@ -1,0 +1,161 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialIcons from '../components/SocialIcons.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Timeline from '../components/Timeline.astro';
+import PostCard from '../components/PostCard.astro';
+import { site, socials } from '../data/site';
+import { projects } from '../data/projects';
+import profile from '../assets/profile.jpg';
+
+const featured = projects.filter((p) => p.featured);
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const recentPosts = posts.slice(0, 2);
+const publicationCount = (await getCollection('publications')).length;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: site.url,
+  image: new URL(profile.src, Astro.site).href,
+  description: site.description,
+  homeLocation: { '@type': 'Place', name: site.location },
+  sameAs: socials.filter((s) => s.href.startsWith('http')).map((s) => s.href),
+  knowsAbout: [
+    'Machine Learning',
+    'Deep Learning',
+    'Generative AI',
+    'Computational Biology',
+    'Bioinformatics',
+    'Immunology',
+  ],
+});
+---
+
+<BaseLayout title={`${site.name} — Building AI/ML applications`} description={site.description}>
+  <script type="application/ld+json" set:html={jsonLd} is:inline />
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-5xl px-4 pt-20 pb-16 sm:px-6 md:pt-28 md:pb-24">
+    <div class="fade-up max-w-3xl">
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-100">
+        Hi, I'm Yuan <span class="inline-block origin-[70%_70%] hover:animate-none">👋</span>
+      </h1>
+      <p class="mt-5 text-xl leading-relaxed text-zinc-700 sm:text-2xl dark:text-zinc-300">
+        {site.tagline.replace(/\.$/, '')}<span class="text-accent dark:text-accent-light">.</span>
+      </p>
+      <p class="mt-4 max-w-2xl leading-relaxed text-zinc-600 dark:text-zinc-400">
+        Machine learning, deep learning, and generative AI — with roots in computational
+        immunology research. Based in {site.location}.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a
+          href="/projects/"
+          class="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors duration-150 hover:bg-accent/90"
+        >
+          View projects
+        </a>
+        <a
+          href="/publications/"
+          class="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors duration-150 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+        >
+          Publications
+        </a>
+      </div>
+      <SocialIcons class="mt-6 -ml-2" />
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="border-t border-zinc-200/70 dark:border-zinc-800/70">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+      <div class="grid items-center gap-10 md:grid-cols-[1fr_auto]">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">About</h2>
+          <div class="mt-4 space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <p>
+              I work at the intersection of machine learning and biomedicine. Trained as an
+              immunologist, I spent years decoding how T cells respond to viruses like dengue and
+              SARS-CoV-2 — first at the La Jolla Institute for Immunology, then at Fred Hutch —
+              publishing along the way in journals such as <em>Nature Communications</em>, <em>Nature Biotechnology</em>, and <em>Blood</em>.
+            </p>
+            <p>
+              Somewhere between mass cytometry panels and single-cell datasets, I fell for the
+              tools themselves: deep learning, transformers, and now generative AI. Today I build
+              AI/ML applications end to end — from protein language models to LLM-powered apps —
+              and share what I learn through <a href="/projects/" class="font-medium text-accent hover:underline dark:text-accent-light">open-source projects</a>, <a href="/blog/" class="font-medium text-accent hover:underline dark:text-accent-light">blog posts</a>, and <a href="https://www.youtube.com/@ytiancompbio" target="_blank" rel="noopener noreferrer" class="font-medium text-accent hover:underline dark:text-accent-light">videos</a>.
+            </p>
+            <p>
+              Away from the keyboard, I'm usually out with a camera — some favorites are in the <a href="/photos/" class="font-medium text-accent hover:underline dark:text-accent-light">photo gallery</a>.
+            </p>
+          </div>
+        </div>
+        <Image
+          src={profile}
+          alt="Portrait of Yuan Tian"
+          width={480}
+          class="mx-auto size-44 rounded-full border border-zinc-200 object-cover md:size-56 dark:border-zinc-800"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured projects -->
+  <section class="border-t border-zinc-200/70 dark:border-zinc-800/70">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          Featured projects
+        </h2>
+        <a
+          href="/projects/"
+          class="text-sm font-medium text-accent hover:underline dark:text-accent-light"
+        >
+          All projects →
+        </a>
+      </div>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {featured.map((project) => <ProjectCard {project} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="border-t border-zinc-200/70 dark:border-zinc-800/70">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Experience</h2>
+      <div class="mt-8 max-w-3xl">
+        <Timeline />
+      </div>
+      <p class="mt-8 text-sm text-zinc-500 dark:text-zinc-500">
+        {publicationCount} research publications along the way — <a href="/publications/" class="font-medium text-accent hover:underline dark:text-accent-light">browse them here</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Recent writing -->
+  <section class="border-t border-zinc-200/70 dark:border-zinc-800/70">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+          Recent writing
+        </h2>
+        <a
+          href="/blog/"
+          class="text-sm font-medium text-accent hover:underline dark:text-accent-light"
+        >
+          All posts →
+        </a>
+      </div>
+      <div class="mt-8 grid gap-4">
+        {recentPosts.map((post) => <PostCard {post} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

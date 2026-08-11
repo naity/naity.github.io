@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+interface Props {
+  publication: CollectionEntry<'publications'>;
+}
+
+const { publication } = Astro.props;
+const { title, authors, journal, type, doi, pdf, image } = publication.data;
+const { Content } = await render(publication);
+---
+
+<li id={publication.id} class="scroll-mt-24">
+  <article class="flex gap-5">
+    {
+      image && (
+        <div class="hidden shrink-0 sm:block">
+          <Image
+            src={image}
+            alt=""
+            width={192}
+            height={192}
+            class="size-24 rounded-lg border border-zinc-200 object-cover dark:border-zinc-800"
+          />
+        </div>
+      )
+    }
+    <div class="min-w-0">
+      <h3 class="font-medium text-balance text-zinc-900 dark:text-zinc-100">{title}</h3>
+      <p class="mt-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+        {
+          authors.map((author, i) => (
+            <>
+              {author === 'Yuan Tian' ? (
+                <span class="font-semibold text-zinc-800 dark:text-zinc-200">{author}</span>
+              ) : (
+                author
+              )}{i < authors.length - 1 ? ', ' : ''}
+            </>
+          ))
+        }
+      </p>
+      <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-500">
+        <span class="italic">{journal}</span>
+        {
+          type === 'preprint' && (
+            <span class="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-500/15 dark:text-amber-400">
+              Preprint
+            </span>
+          )
+        }
+      </p>
+      <div class="mt-3 flex flex-wrap items-center gap-2">
+        {
+          doi && (
+            <a
+              href={`https://doi.org/${doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 rounded-lg border border-zinc-300 px-2.5 py-1 text-xs font-medium text-zinc-700 transition-colors duration-150 hover:border-accent/60 hover:text-accent dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-accent-light/60 dark:hover:text-accent-light"
+            >
+              DOI
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3">
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
+            </a>
+          )
+        }
+        {
+          pdf && (
+            <a
+              href={pdf}
+              class="inline-flex items-center gap-1 rounded-lg border border-zinc-300 px-2.5 py-1 text-xs font-medium text-zinc-700 transition-colors duration-150 hover:border-accent/60 hover:text-accent dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-accent-light/60 dark:hover:text-accent-light"
+            >
+              PDF
+            </a>
+          )
+        }
+        <details class="group w-full">
+          <summary class="inline-flex cursor-pointer list-none items-center gap-1 text-xs font-medium text-zinc-500 transition-colors duration-150 select-none hover:text-accent dark:text-zinc-400 dark:hover:text-accent-light [&::-webkit-details-marker]:hidden">
+            Abstract
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-3 transition-transform duration-150 group-open:rotate-180"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="mt-2 border-l-2 border-zinc-200 pl-4 text-sm leading-relaxed text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+            <Content />
+          </div>
+        </details>
+      </div>
+    </div>
+  </article>
+</li>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<BaseLayout
+  title="Projects — Yuan Tian"
+  description="Open-source AI/ML projects by Yuan Tian: protein language models, transformers, multi-modal deep learning, and more."
+>
+  <section class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+      Projects
+    </h1>
+    <p class="mt-4 max-w-2xl leading-relaxed text-zinc-600 dark:text-zinc-400">
+      Open-source work spanning protein language models, transformers, and multi-modal deep
+      learning. More on <a
+        href="https://github.com/naity"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-medium text-accent hover:underline dark:text-accent-light">GitHub</a
+      >.
+    </p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => <ProjectCard {project} />)}
+    </div>
+  </section>
+</BaseLayout>
