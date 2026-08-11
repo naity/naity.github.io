@@ -12,7 +12,7 @@ import { experience } from '../data/experience';
         />
         <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
           <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">{entry.org}</h3>
-          <p class="text-sm text-zinc-500 dark:text-zinc-500">{entry.period}</p>
+          {entry.period && <p class="text-sm text-zinc-500 dark:text-zinc-500">{entry.period}</p>}
         </div>
         {(entry.role || entry.location) && (
           <p class="mt-0.5 text-sm font-medium text-zinc-600 dark:text-zinc-400">
@@ -21,7 +21,9 @@ import { experience } from '../data/experience';
             {entry.location}
           </p>
         )}
-        <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{entry.summary}</p>
+        {entry.summary && (
+          <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{entry.summary}</p>
+        )}
       </li>
     ))
   }

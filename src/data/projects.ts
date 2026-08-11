@@ -10,6 +10,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: 'FM4Life',
+    description:
+      'Structured knowledge bundles ("skills") that let AI coding agents work with life-science foundation models — ESM, AlphaFold, RFdiffusion, DiffDock, scGPT, and more — out of the box.',
+    url: 'https://github.com/naity/FM4Life',
+    tags: ['AI Agents', 'Foundation Models', 'Life Sciences'],
+    featured: true,
+  },
+  {
     name: 'finetune-esm',
     description:
       'Scalable fine-tuning of ESM-2 protein language models with distributed training (FSDP/DeepSpeed via Ray) and parameter-efficient techniques such as LoRA.',
@@ -33,7 +41,6 @@ export const projects: Project[] = [
       'A step-by-step, from-scratch transformer implementation for antibody classification — training, tuning, and evaluation included.',
     url: 'https://github.com/naity/protein-transformer',
     tags: ['Transformers', 'PyTorch', 'Antibodies'],
-    featured: true,
   },
   {
     name: 'ReceptorAI',

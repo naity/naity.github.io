@@ -3,15 +3,18 @@ export interface ExperienceEntry {
   /** Rendered only when set — the most recent entry stays deliberately title-free. */
   role?: string;
   location?: string;
-  period: string;
-  summary: string;
+  /** Rendered only when set. */
+  period?: string;
+  /** Rendered only when set. */
+  summary?: string;
 }
 
-// TODO(yuan): verify orgs, roles, and years below — periods are estimates
-// reconstructed from the public record (publication affiliations); adjust freely.
+// Verified against public sources (LinkedIn snippets, ResearchGate, Journal of
+// Cellular Immunology editor bio). Remaining TODO(yuan) items are dates/names
+// only visible on the full LinkedIn profile.
 export const experience: ExperienceEntry[] = [
   {
-    org: 'Industry — AI/ML', // TODO(yuan): add company name here if desired
+    org: 'Amazon Web Services (AWS)',
     period: '2023 — Present', // TODO(yuan): confirm start year
     location: 'Seattle, WA',
     summary:
@@ -19,26 +22,37 @@ export const experience: ExperienceEntry[] = [
   },
   {
     org: 'Fred Hutchinson Cancer Center',
-    role: 'Computational Biology', // TODO(yuan): exact title (Vaccine and Infectious Disease Division)
+    role: 'Staff Scientist',
     period: '2020 — 2023', // TODO(yuan): confirm years
     location: 'Seattle, WA',
     summary:
-      'Single-cell multi-omics of immune responses in vaccine trials and cancer immunotherapy — including CITE-seq normalization methods (ADTnorm) and T-cell profiling in multiple myeloma.',
+      'Computational immunology in the Vaccine and Infectious Disease Division and the Translational Data Science IRC — single-cell multi-omics of immune responses in vaccine trials and cancer immunotherapy, including CITE-seq normalization (ADTnorm) and T-cell profiling in multiple myeloma.',
   },
   {
     org: 'La Jolla Institute for Immunology',
     role: 'Postdoctoral Fellow',
-    period: '2016 — 2020', // TODO(yuan): confirm years
+    period: '2016 — 2020', // TODO(yuan): confirm end year
     location: 'La Jolla, CA',
     summary:
       'Computational immunology in the Sette lab — transcriptomic and TCR profiling of virus-specific T cells (dengue, Zika, pertussis). AAI Intersect Fellow bridging immunology and bioinformatics with the Peters lab.',
   },
   {
-    org: 'University of Alabama at Birmingham', // TODO(yuan): confirm institution
-    role: 'Ph.D. in Immunology', // TODO(yuan): confirm degree/program
-    period: '2010 — 2016', // TODO(yuan): confirm years
+    org: 'Georgia Institute of Technology',
+    role: 'M.S. in Computer Science', // TODO(yuan): confirm program name (e.g. OMSCS)
+    // TODO(yuan): add years, e.g. period: '2021 — 2023'
+  },
+  {
+    org: 'University of Alabama at Birmingham',
+    role: 'Ph.D. in Microbiology and Immunology',
+    period: '2011 — 2016',
     location: 'Birmingham, AL',
     summary:
       'Doctoral research on cytokine regulation of T cell differentiation and memory (IL-21, IL-10) during viral infection, in the Zajac lab.',
+  },
+  {
+    org: 'Tianjin University',
+    role: 'B.E. in Bioengineering',
+    period: '2011',
+    location: 'Tianjin, China',
   },
 ];
