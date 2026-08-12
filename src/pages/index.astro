@@ -6,16 +6,15 @@ import SocialIcons from '../components/SocialIcons.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Timeline from '../components/Timeline.astro';
 import PostCard from '../components/PostCard.astro';
+import ExternalPostCard from '../components/ExternalPostCard.astro';
 import { site, socials } from '../data/site';
 import { projects } from '../data/projects';
 import { education } from '../data/experience';
+import { getWritingFeed } from '../lib/posts';
 import profile from '../assets/profile.jpg';
 
 const featured = projects.filter((p) => p.featured);
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
-const recentPosts = posts.slice(0, 2);
+const recentPosts = (await getWritingFeed()).slice(0, 3);
 const publicationCount = (await getCollection('publications')).length;
 
 const jsonLd = JSON.stringify({
@@ -191,7 +190,15 @@ const jsonLd = JSON.stringify({
         </a>
       </div>
       <div class="mt-8 grid gap-4">
-        {recentPosts.map((post) => <PostCard {post} />)}
+        {
+          recentPosts.map((entry) =>
+            entry.kind === 'native' ? (
+              <PostCard post={entry.native} />
+            ) : (
+              <ExternalPostCard post={entry.external} />
+            )
+          )
+        }
       </div>
     </div>
   </section>

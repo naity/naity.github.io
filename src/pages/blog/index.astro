@@ -1,11 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
+import ExternalPostCard from '../../components/ExternalPostCard.astro';
+import { getWritingFeed } from '../../lib/posts';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const feed = await getWritingFeed();
 ---
 
 <BaseLayout
@@ -17,8 +16,7 @@ const posts = (await getCollection('blog')).sort(
       Blog
     </h1>
     <p class="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
-      Hands-on posts on deep learning, from multi-modal models to single-cell biology. Older
-      writing also lives on <a
+      Hands-on posts on AI/ML and computational biology, here and on <a
         href="https://medium.com/@yuan_tian"
         target="_blank"
         rel="noopener noreferrer"
@@ -26,7 +24,15 @@ const posts = (await getCollection('blog')).sort(
       >.
     </p>
     <div class="mt-10 grid gap-4">
-      {posts.map((post) => <PostCard {post} />)}
+      {
+        feed.map((entry) =>
+          entry.kind === 'native' ? (
+            <PostCard post={entry.native} />
+          ) : (
+            <ExternalPostCard post={entry.external} />
+          )
+        )
+      }
     </div>
   </section>
 </BaseLayout>
