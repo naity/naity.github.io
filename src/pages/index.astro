@@ -8,6 +8,7 @@ import Timeline from '../components/Timeline.astro';
 import PostCard from '../components/PostCard.astro';
 import { site, socials } from '../data/site';
 import { projects } from '../data/projects';
+import { education } from '../data/experience';
 import profile from '../assets/profile.jpg';
 
 const featured = projects.filter((p) => p.featured);
@@ -133,7 +134,27 @@ const jsonLd = JSON.stringify({
       <div class="mt-8 max-w-3xl">
         <Timeline />
       </div>
-      <p class="mt-8 text-sm text-zinc-500 dark:text-zinc-500">
+
+      <h3 class="mt-14 text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+        Education
+      </h3>
+      <ul class="mt-5 max-w-3xl space-y-4">
+        {
+          education.map((entry) => (
+            <li class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
+              <div>
+                <p class="font-semibold text-zinc-900 dark:text-zinc-100">{entry.org}</p>
+                <p class="mt-0.5 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                  {entry.role}
+                </p>
+              </div>
+              <p class="text-sm text-zinc-500 dark:text-zinc-500">{entry.period}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-10 text-sm text-zinc-500 dark:text-zinc-500">
         {publicationCount} research publications along the way — <a href="/publications/" class="font-medium text-accent hover:underline dark:text-accent-light">browse them here</a>.
       </p>
     </div>

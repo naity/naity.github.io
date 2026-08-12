@@ -25,9 +25,9 @@ npm run check      # type-check .astro files
 | Publication PDFs   | `public/publications/<slug>/` (stable URLs)    |
 | Design tokens      | `src/styles/global.css`                        |
 
-> **TODO(yuan):** `src/data/experience.ts` contains estimated years/titles marked with
-> `TODO(yuan)` comments — please verify and correct them. Star counts in
-> `src/data/projects.ts` are a manual snapshot; refresh occasionally.
+> **Note:** star counts in `src/data/projects.ts` are a manual snapshot; refresh
+> occasionally. In `src/data/experience.ts`, update the Georgia Tech entry once
+> the degree is completed.
 
 ## Adding a blog post
 
