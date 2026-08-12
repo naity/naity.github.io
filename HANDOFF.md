@@ -15,7 +15,14 @@ Inter, near-zero client JS.
 - **Env:** Node 22+ (`node --version`), Astro `^7.2.0`, Tailwind `^4.3.3`, `sharp` for images.
 - **Commands:** `npm install`, `npm run dev` (localhost:4321), `npm run build`, `npm run preview`, `npm run check` (astro check).
 
-## Status: essentially done; one task open (Medium curation)
+## Status: done (Medium curation completed 2026-08-12)
+
+The Medium curation task below was completed: 5 external articles are live in
+`src/data/externalPosts.ts` (resume matcher with confirmed 2025-12-14 date, tool-using LLM
+agent, protein transformers, protein science primer, TCR specificity). The other top picks
+(image+tabular, single-cell multi-omics, ReFocus, UFC ChatGPT) already exist as native posts,
+so they were not added as link-outs. No multi-part series found for the resume matcher yet.
+Native migration of Medium posts was deferred (Yuan chose "decide later").
 
 Everything below is built, committed, and pushed:
 
