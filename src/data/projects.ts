@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   url: string;
   tags: string[];
-  /** Star count is a manual snapshot — update occasionally (see README). */
+  /** Star count is a manual snapshot; update occasionally (see README). */
   stars?: number;
   featured?: boolean;
 }
@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     name: 'FM4Life',
     description:
-      'Structured knowledge bundles ("skills") that let AI coding agents work with life-science foundation models — ESM, AlphaFold, RFdiffusion, DiffDock, scGPT, and more — out of the box.',
+      'Structured knowledge bundles ("skills") that let AI coding agents work with life-science foundation models like ESM, AlphaFold, RFdiffusion, DiffDock, and scGPT out of the box.',
     url: 'https://github.com/naity/FM4Life',
     tags: ['AI Agents', 'Foundation Models', 'Life Sciences'],
     featured: true,
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     name: 'protein-transformer',
     description:
-      'A step-by-step, from-scratch transformer implementation for antibody classification — training, tuning, and evaluation included.',
+      'A step-by-step, from-scratch transformer implementation for antibody classification, with training, tuning, and evaluation included.',
     url: 'https://github.com/naity/protein-transformer',
     tags: ['Transformers', 'PyTorch', 'Antibodies'],
   },
@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     name: 'citeseq_autoencoder',
     description:
-      'Autoencoder-based integration of single-cell CITE-seq multi-omics data — companion code and notebooks for the blog tutorial and video series.',
+      'Autoencoder-based integration of single-cell CITE-seq multi-omics data. Companion code and notebooks for the blog tutorial and video series.',
     url: 'https://github.com/naity/citeseq_autoencoder',
     tags: ['Single-cell', 'Autoencoders', 'Multi-omics'],
   },

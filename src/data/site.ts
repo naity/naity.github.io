@@ -2,7 +2,7 @@ export const site = {
   name: 'Yuan Tian',
   tagline: 'Building AI/ML applications to solve real-world problems.',
   description:
-    'Yuan Tian builds AI/ML applications to solve real-world problems — bringing a background in computational immunology research to machine learning and generative AI.',
+    'Yuan Tian builds AI/ML applications to solve real-world problems, bringing a background in computational immunology research to generative AI and machine learning.',
   url: 'https://naity.github.io',
   location: 'Seattle, WA',
   email: 'ytiancompbio@gmail.com',
