@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+
+const publications = (await getCollection('publications')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const byYear = new Map<number, typeof publications>();
+for (const publication of publications) {
+  const year = publication.data.date.getUTCFullYear();
+  byYear.set(year, [...(byYear.get(year) ?? []), publication]);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<BaseLayout
+  title="Publications — Yuan Tian"
+  description={`${publications.length} research publications by Yuan Tian on T cell immunology, single-cell multi-omics, and machine learning.`}
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-24">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+      Publications
+    </h1>
+    <p class="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      {publications.length} publications on T cell immunology, vaccines, and single-cell multi-omics.
+      Also on <a
+        href="https://scholar.google.com/citations?user=8s-gqV0AAAAJ"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-medium text-accent hover:underline dark:text-accent-light">Google Scholar</a
+      >.
+    </p>
+
+    {
+      years.map((year) => (
+        <section class="mt-12">
+          <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">{year}</h2>
+          <ul class="mt-6 space-y-8">
+            {byYear.get(year)!.map((publication) => (
+              <PublicationItem {publication} />
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </section>
+</BaseLayout>

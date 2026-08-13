@@ -1,0 +1,60 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<a
+  href={project.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group flex h-full flex-col rounded-xl border border-zinc-200 p-5 transition-colors duration-150 hover:border-accent/50 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:border-accent-light/50 dark:hover:bg-zinc-900"
+>
+  <div class="flex items-center justify-between gap-2">
+    <h3
+      class="font-semibold text-zinc-900 transition-colors duration-150 group-hover:text-accent dark:text-zinc-100 dark:group-hover:text-accent-light"
+    >
+      {project.name}
+    </h3>
+    <div class="flex shrink-0 items-center gap-2 text-zinc-400 dark:text-zinc-500">
+      {
+        project.stars && (
+          <span class="inline-flex items-center gap-1 text-xs font-medium">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" class="size-3.5">
+              <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            {project.stars}
+          </span>
+        )
+      }
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="size-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+      >
+        <path d="M7 17 17 7M8 7h9v9"></path>
+      </svg>
+    </div>
+  </div>
+  <p class="mt-2 flex-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+    {project.description}
+  </p>
+  <ul class="mt-4 flex flex-wrap gap-1.5">
+    {
+      project.tags.map((tag) => (
+        <li class="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+          {tag}
+        </li>
+      ))
+    }
+  </ul>
+</a>

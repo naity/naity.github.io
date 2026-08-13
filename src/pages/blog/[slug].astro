@@ -1,0 +1,90 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../lib/format';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { title, date, description, tags, cover } = post.data;
+const { Content } = await render(post);
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// author/publisher point at the Person entity declared on the home page.
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: date.toISOString(),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  url: canonical,
+  ...(cover ? { image: new URL(cover.src, Astro.site).href } : {}),
+  ...(tags.length > 0 ? { keywords: tags.join(', ') } : {}),
+  author: { '@id': new URL('/#person', Astro.site).href },
+  publisher: { '@id': new URL('/#person', Astro.site).href },
+});
+---
+
+<BaseLayout
+  title={`${title} — Yuan Tian`}
+  {description}
+  ogImage={cover}
+  ogType="article"
+  publishedTime={date}
+>
+  <script type="application/ld+json" set:html={jsonLd} is:inline />
+  <article class="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20">
+    <header>
+      <p class="text-sm text-zinc-500 dark:text-zinc-500">
+        <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>
+      </p>
+      <h1
+        class="mt-2 text-3xl font-bold tracking-tight text-balance text-zinc-900 sm:text-4xl dark:text-zinc-100"
+      >
+        {title}
+      </h1>
+      {
+        tags.length > 0 && (
+          <ul class="mt-4 flex flex-wrap gap-1.5">
+            {tags.map((tag) => (
+              <li class="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      {
+        cover && (
+          <Image
+            src={cover}
+            alt=""
+            width={1472}
+            class="mt-8 w-full rounded-xl border border-zinc-200 dark:border-zinc-800"
+            loading="eager"
+          />
+        )
+      }
+    </header>
+
+    <div
+      class="prose prose-zinc dark:prose-invert mt-10 max-w-none prose-headings:tracking-tight prose-img:rounded-lg"
+    >
+      <Content />
+    </div>
+
+    <footer class="mt-12 border-t border-zinc-200 pt-6 dark:border-zinc-800">
+      <a
+        href="/blog/"
+        class="text-sm font-medium text-accent hover:underline dark:text-accent-light"
+      >
+        ← Back to all posts
+      </a>
+    </footer>
+  </article>
+</BaseLayout>

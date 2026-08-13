@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found — Yuan Tian" description="This page does not exist." noindex>
+  <section class="mx-auto flex max-w-3xl flex-col items-start px-4 py-24 sm:px-6">
+    <p class="text-sm font-medium text-accent dark:text-accent-light">404</p>
+    <h1 class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+      Page not found
+    </h1>
+    <p class="mt-4 text-zinc-600 dark:text-zinc-400">
+      This page doesn't exist. It may have moved in a site redesign, so the links below should
+      get you back on track.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="/"
+        class="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors duration-150 hover:bg-accent/90"
+      >
+        Home
+      </a>
+      <a
+        href="/publications/"
+        class="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors duration-150 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+      >
+        Publications
+      </a>
+      <a
+        href="/blog/"
+        class="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors duration-150 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+      >
+        Blog
+      </a>
+    </div>
+  </section>
+</BaseLayout>

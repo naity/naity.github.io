@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import ExternalPostCard from '../../components/ExternalPostCard.astro';
+import { getWritingFeed } from '../../lib/posts';
+
+const feed = await getWritingFeed();
+---
+
+<BaseLayout
+  title="Blog — Yuan Tian"
+  description="Hands-on posts on deep learning, from multi-modal models to single-cell biology."
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-24">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+      Blog
+    </h1>
+    <p class="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      Hands-on posts on AI/ML and computational biology, here and on <a
+        href="https://medium.com/@yuan_tian"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-medium text-accent hover:underline dark:text-accent-light">Medium</a
+      >.
+    </p>
+    <div class="mt-10 grid gap-4">
+      {
+        feed.map((entry) =>
+          entry.kind === 'native' ? (
+            <PostCard post={entry.native} />
+          ) : (
+            <ExternalPostCard post={entry.external} />
+          )
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+---
+
+<BaseLayout
+  title="Photos — Yuan Tian"
+  description="Landscape, cityscape, and airshow photography by Yuan Tian."
+>
+  <section class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-100">
+      Photos
+    </h1>
+    <blockquote class="mt-6 max-w-2xl border-l-2 border-accent pl-4 text-zinc-600 italic dark:border-accent-light dark:text-zinc-400">
+      "In short, beauty is everywhere. It is not she that is lacking to our eye, but our eyes which
+      fail to perceive her."
+      <cite class="mt-1 block text-sm not-italic text-zinc-500 dark:text-zinc-500"
+        >— Auguste Rodin</cite
+      >
+    </blockquote>
+    <div class="mt-10">
+      <PhotoGrid />
+    </div>
+  </section>
+</BaseLayout>
