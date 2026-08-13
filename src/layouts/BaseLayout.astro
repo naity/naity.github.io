@@ -11,9 +11,11 @@ interface Props {
   description?: string;
   ogImage?: ImageMetadata;
   ogType?: 'website' | 'article';
+  publishedTime?: Date;
+  noindex?: boolean;
 }
 
-const { title, description, ogImage, ogType } = Astro.props;
+const { title, description, ogImage, ogType, publishedTime, noindex } = Astro.props;
 ---
 
 <!doctype html>
@@ -33,7 +35,7 @@ const { title, description, ogImage, ogType } = Astro.props;
       })();
     </script>
 
-    <Seo {title} {description} {ogImage} {ogType} />
+    <Seo {title} {description} {ogImage} {ogType} {publishedTime} {noindex} />
 
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

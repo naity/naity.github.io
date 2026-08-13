@@ -9,7 +9,7 @@ import PostCard from '../components/PostCard.astro';
 import ExternalPostCard from '../components/ExternalPostCard.astro';
 import { site, socials } from '../data/site';
 import { projects } from '../data/projects';
-import { education } from '../data/experience';
+import { education, experience } from '../data/experience';
 import { getWritingFeed } from '../lib/posts';
 import profile from '../assets/profile.jpg';
 
@@ -17,19 +17,30 @@ const featured = projects.filter((p) => p.featured);
 const recentPosts = (await getWritingFeed()).slice(0, 3);
 const publicationCount = (await getCollection('publications')).length;
 
+const current = experience[0];
+
+// A stable @id lets other pages reference this same entity as their author.
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${site.url}/#person`,
   name: site.name,
+  givenName: 'Yuan',
+  familyName: 'Tian',
   url: site.url,
   image: new URL(profile.src, Astro.site).href,
   description: site.description,
+  jobTitle: current.role,
+  worksFor: { '@type': 'Organization', name: current.org },
+  alumniOf: education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.org })),
   homeLocation: { '@type': 'Place', name: site.location },
   sameAs: socials.filter((s) => s.href.startsWith('http')).map((s) => s.href),
   knowsAbout: [
     'Machine Learning',
     'Deep Learning',
     'Generative AI',
+    'AI Agents',
+    'Large Language Models',
     'Computational Biology',
     'Bioinformatics',
     'Immunology',
