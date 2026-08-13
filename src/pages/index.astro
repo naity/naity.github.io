@@ -20,14 +20,15 @@ const publicationCount = (await getCollection('publications')).length;
 const current = experience[0];
 
 // A stable @id lets other pages reference this same entity as their author.
+// Derived from Astro.site so a domain change only needs astro.config.mjs.
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
-  '@id': `${site.url}/#person`,
+  '@id': new URL('/#person', Astro.site).href,
   name: site.name,
   givenName: 'Yuan',
   familyName: 'Tian',
-  url: site.url,
+  url: new URL('/', Astro.site).href,
   image: new URL(profile.src, Astro.site).href,
   description: site.description,
   jobTitle: current.role,

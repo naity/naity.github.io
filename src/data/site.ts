@@ -3,6 +3,7 @@ export const site = {
   tagline: 'Building AI/ML applications to solve real-world problems.',
   description:
     'Yuan Tian builds AI/ML applications to solve real-world problems, bringing a background in computational immunology research to generative AI and machine learning.',
+  /** Keep in sync with `site` in astro.config.mjs, which drives canonical URLs. */
   url: 'https://naity.github.io',
   location: 'Seattle, WA',
   email: 'ytiancompbio@gmail.com',
